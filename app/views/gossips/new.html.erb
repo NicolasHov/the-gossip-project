@@ -1,8 +1,8 @@
 <h1>New Gossip</h1>
 <%= form_tag (gossips_path) do %>
-<%= label_tag 'anonymous_author', 'Author' %>
-<%= text_field_tag 'Name' %>
-<%= label_tag 'comment', 'Content' %>
-<%= text_area_tag 'My gossip' %>
+<%= label_tag 'anonymous_author', 'My name' %>
+<%= text_field_tag 'anonymous_author' %>
+<%= label_tag 'comment', 'My blabla' %>
+<%= text_area_tag 'comment' %>
 <%= submit_tag "Post "%>
 <% end %>
