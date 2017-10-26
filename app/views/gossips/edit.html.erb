@@ -1,0 +1,11 @@
+<h1>Edit</h1>
+
+<%= form_tag gossip_path(@gossip), method: :put do %>
+
+<!-- formulaire -->
+<%= label_tag 'anonymous_author', 'My name' %>
+<%= text_field_tag 'anonymous_author' %>
+<%= label_tag 'comment', 'My blabla' %>
+<%= text_area_tag 'comment' %>
+<%= submit_tag "Edit my blabla"%>
+<% end %>

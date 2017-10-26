@@ -3,5 +3,6 @@
 <p>Your name :   <%= @gossip.anonymous_author %></p>
 <p>Your comment :<%=@gossip.comment %></p>
 
+<p><%= link_to "Edit gossip", edit_gossip_path %></p>
 
 <p><%= link_to "Come back to gossip list", gossips_path %></p>

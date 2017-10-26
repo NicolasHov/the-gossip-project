@@ -8,6 +8,8 @@
       <th scope="col">Name</th>
       <th scope="col">Message</th>
       <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
 
@@ -19,6 +21,8 @@
       <td><%=gossip.anonymous_author%></td>
       <td><%=gossip.comment%></td>
       <td><%= link_to 'Show the comment', gossip_path(gossip)%></td>
+      <td><%= link_to 'Edit the comment', edit_gossip_path(gossip)%></td>
+      <td><%= link_to "Remove", gossip, method: :delete, data: { confirm: "Are you sure?" } %></td>
       <% i = i + 1%>
     </tr>
 

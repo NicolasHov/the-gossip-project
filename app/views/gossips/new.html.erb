@@ -1,8 +1,24 @@
 <h1>New Gossip</h1>
+
 <%= form_tag (gossips_path) do %>
+
+<!-- affichage des erreurs, pas actif -->
+  <% if @gossip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gossip.errors.count, "error") %> prohibited this gossip from being saved:</h2>
+
+      <ul>
+      <% @gossip.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- formulaire -->
 <%= label_tag 'anonymous_author', 'My name' %>
 <%= text_field_tag 'anonymous_author' %>
 <%= label_tag 'comment', 'My blabla' %>
 <%= text_area_tag 'comment' %>
-<%= submit_tag "Post "%>
+<%= submit_tag "Post my blabla"%>
 <% end %>
