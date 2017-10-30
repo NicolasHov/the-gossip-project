@@ -4,7 +4,7 @@
     <title>The Gossip Project</title>
     <%= csrf_meta_tags %>
 
-    <%= render "layouts/header" %>
+    <%= render "layouts/header" %> <!-- partial header-->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,9 +18,10 @@
 
   </head>
   <body>
-
-
     <div class="container" style="padding-top: 5rem;">
         <%= yield %>
+         <!-- Adding some debug information to the site layout -->
+        <%= render 'layouts/footer' %> <!-- partial footer-->
+        <%= debug(params) if Rails.env.development? %>
     </div>
   </body>

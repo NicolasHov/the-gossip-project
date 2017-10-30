@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030103912) do
+ActiveRecord::Schema.define(version: 20171030144131) do
 
   create_table "gossips", force: :cascade do |t|
     t.string "anonymous_author"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171030103912) do
     t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
