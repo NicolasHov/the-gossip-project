@@ -1,24 +1,41 @@
-<h1>New Profile</h1>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
-<%= form_tag (moussaillons_path) do %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-<!-- affichage des erreurs, pas actif -->
-  <% if @moussaillon.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@moussaillon.errors.count, "error") %> prohibited this moussaillon from being saved:</h2>
+    <!-- TODO partial layout/errors_message... -->
+    <!-- formulaire form_for -->
+    <%= form_for(@moussaillon) do |f| %>
+    <!-- affichage des erreurs, pas actif -->
+      <% if @moussaillon.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@moussaillon.errors.count, "error") %> prohibited this moussaillon from being saved:</h2>
 
-      <ul>
-      <% @moussaillon.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @moussaillon.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.label :mail %>
+      <%= f.email_field :mail %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 
 <!-- formulaire -->
-<%= label_tag 'username', 'Username' %>
-<%= text_field_tag 'username' %>
-<%= label_tag 'mail', 'Email' %>
-<%= text_field_tag 'mail' %>
-<%= submit_tag "Create my profile"%>
-<% end %>

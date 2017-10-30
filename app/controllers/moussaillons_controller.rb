@@ -43,7 +43,7 @@ class MoussaillonsController < ApplicationController
 
   private
     def moussaillon_params
-      params.permit(:bio, :username, :mail)
+      params.permit(:username, :mail, :password, :password_confirmation)
     end
 
 end
