@@ -1,9 +1,14 @@
 <div class="center jumbotron">
-   <center> 
-    <h1>The gossip project</h1>
-    <h3>
-      Ici, tu peux lâcher des com' sur les moussaillons 🎓
-    </h3>
-    <%= link_to "Let's ROOOLLLL !!", gossips_path, class: "btn btn-lg btn-primary" %>
-</center>
+   <center>
+      <h1>The gossip project</h1>
+      <h3>
+        Ici, tu peux lâcher des com' sur les moussaillons 🎓
+      </h3>
+      <!-- <%= link_to "Let's ROOOLLLL !!", gossips_path, class: "btn btn-lg btn-primary" %> -->
+
+      <!-- TODO add links -->
+      <p><%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %></p>
+      <br>
+      <p><%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %></p>
+      </center>
   </div>
