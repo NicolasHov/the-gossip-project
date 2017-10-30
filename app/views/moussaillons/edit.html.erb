@@ -1,0 +1,13 @@
+<h1>Edit my profile</h1>
+
+<%= form_tag moussaillon_path(@moussaillon), method: :put do %>
+
+<!-- formulaire -->
+<%= label_tag 'username', 'Username' %>
+<%= text_field_tag 'username' %>
+<%= label_tag 'mail', 'Email' %>
+<%= text_field_tag 'mail' %>
+<%= label_tag 'bio', 'My bio' %>
+<%= text_area_tag 'bio' %>
+<%= submit_tag "Edit my profile"%>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Your Profile</h1>
+
+<p>Your name :   <%= @moussaillon.username %></p>
+<p>Your mail :<%=@moussaillon.mail %></p>
+<p>Your bio :<%=@moussaillon.bio %></p>
+<p><%= link_to "Edit Profile", edit_moussaillon_path %></p>
+
+<p><%= link_to "Come back to Moussaillon list", moussaillons_path %></p>

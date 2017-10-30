@@ -1,0 +1,34 @@
+<h1>Moussaillon List</h1>
+
+<table class="table table-dark">
+  <thead>
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Bio</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% i = 1 %>
+    <% @moussaillons.each do |moussaillon| %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td><%=moussaillon.username%></td>
+      <td><%=moussaillon.mail%></td>
+      <td><%=moussaillon.bio%></td>
+      <td><%= link_to 'Show profile', moussaillon_path(moussaillon)%></td>
+      <td><%= link_to 'Edit profile', edit_moussaillon_path(moussaillon)%></td>
+      <td><%= link_to "Remove profile", moussaillon, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      <% i = i + 1%>
+    </tr>
+
+  </tbody>
+  <%end%>
+
+</table>
