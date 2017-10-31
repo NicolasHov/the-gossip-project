@@ -29,6 +29,7 @@ class MoussaillonsController < ApplicationController
       #render plain: params[:moussaillon].inspect  #on a un hash avec plain comme key et params[].inspect comme value
       @moussaillon = Moussaillon.new(moussaillon_params)
       if @moussaillon.save
+        flash[:notice] = "Successfully created..."
         redirect_to @moussaillon
       else
         render 'new'
@@ -43,7 +44,7 @@ class MoussaillonsController < ApplicationController
 
   private
     def moussaillon_params
-      params.permit(:username, :mail, :password, :password_confirmation)
+      params.require(:moussaillon).permit(:username, :mail, :password, :password_confirmation)
     end
 
 end

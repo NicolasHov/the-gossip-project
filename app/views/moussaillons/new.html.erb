@@ -4,38 +4,23 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    <!-- TODO partial layout/errors_message... -->
     <!-- formulaire form_for -->
     <%= form_for(@moussaillon) do |f| %>
-    <!-- affichage des erreurs, pas actif -->
-      <% if @moussaillon.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@moussaillon.errors.count, "error") %> prohibited this moussaillon from being saved:</h2>
-
-          <ul>
-          <% @moussaillon.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <%= render 'shared/error_messages' %>
 
       <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, class: 'form-control' %>
 
       <%= f.label :mail %>
-      <%= f.email_field :mail %>
+      <%= f.email_field :mail, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
-
-
-<!-- formulaire -->

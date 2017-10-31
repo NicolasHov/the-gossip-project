@@ -1,0 +1,14 @@
+
+<!-- affichage des erreurs, pas actif -->
+  <% if @moussaillon.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <h2><%= pluralize(@moussaillon.errors.count, "error") %> prohibited this moussaillon from being saved:</h2>
+      </div>
+      <ul>
+      <% @moussaillon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
