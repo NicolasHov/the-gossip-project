@@ -11,4 +11,8 @@ class MoussaillonsLoginTest < ActionDispatch::IntegrationTest
     get root_path
     assert flash.empty?
   end
+
+  # add test for valid information :
+  #test "login with valid information" do
+
 end
